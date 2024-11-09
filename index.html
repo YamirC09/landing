@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page de Salud Mental</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        header, footer {
+            background-color: #4a90e2;
+            color: #fff;
+            text-align: center;
+            padding: 1em;
+        }
+
+        .container {
+            width: 90%;
+            margin: auto;
+            max-width: 1200px;
+            padding: 2em 0;
+        }
+
+        /* Integrantes Section */
+        .integrantes-section {
+            text-align: center;
+            margin-bottom: 2em;
+        }
+
+        .integrantes-title {
+            font-size: 1.8em;
+            margin-bottom: 1em;
+        }
+
+        .cards-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 1em;
+        }
+
+        .card {
+            background-color: #fff;
+            width: 200px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            padding: 1em;
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        .card img {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        .card a {
+            display: block;
+            margin-top: 0.5em;
+            text-decoration: none;
+            color: #4a90e2;
+            font-weight: bold;
+        }
+
+        /* Buttons */
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1em;
+            margin: 2em 0;
+        }
+
+        .button {
+            background-color: #4a90e2;
+            color: #fff;
+            padding: 0.8em 1.5em;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .button:hover {
+            background-color: #357abd;
+        }
+
+        /* Media Section */
+        .media-section {
+            text-align: center;
+            margin-bottom: 2em;
+        }
+
+        .media-title {
+            font-size: 1.8em;
+            margin-bottom: 1em;
+        }
+
+        .media-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1em;
+            justify-content: center;
+        }
+
+        .media-content img, .media-content video {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Conclusion Section */
+        .conclusion-section {
+            background-color: #eaf4fc;
+            padding: 2em;
+            text-align: center;
+            border-radius: 8px;
+            margin-bottom: 2em;
+        }
+
+        .conclusion-title {
+            font-size: 1.8em;
+            margin-bottom: 1em;
+        }
+
+        footer {
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Salud Mental y Bienestar</h1>
+        <p>Cuidar de tu mente es tan importante como cuidar de tu cuerpo</p>
+    </header>
+
+    <div class="container">
+        <!-- Integrantes Section -->
+        <section class="integrantes-section">
+            <h2 class="integrantes-title">Nuestro Equipo</h2>
+            <div class="cards-container">
+                <div class="card">
+                    <img src="img/herlinda.jpg" alt="Integrante 1">
+                    <a href="pagina1.html">Herlinda</a>
+                </div>
+                <div class="card">
+                    <img src="img/valentina.jpg" alt="Integrante 2">
+                    <a href="pagina2.html">Valentina Castañeda</a>
+                </div>
+                <div class="card">
+                    <img src="img/marisol.jpg" alt="Integrante 3">
+                    <a href="pagina3.html">Marisol Vizcaino</a>
+                </div>
+                <div class="card">
+                    <img src="img/wendy.jpg" alt="Integrante 4">
+                    <a href="pagina4.html">Wendy Tapia</a>
+                </div>
+            </div>
+
+            <div class="buttons">
+                <a href="encuesta.html" class="button">Participar en la Encuesta</a>
+                <a href="base_datos_encuesta.html" class="button">Ver Resultados</a>
+            </div>
+        </section>
+
+        <!-- Media Section -->
+        <section class="media-section">
+            <h2 class="media-title">Galería de Salud Mental</h2>
+            <div class="media-content">
+                <img src="imagen1.jpg" alt="Imagen 1">
+                <video controls src="video1.mp4"></video>
+                <img src="imagen2.jpg" alt="Imagen 2">
+                <video controls src="video2.mp4"></video>
+            </div>
+        </section>
+
+        <!-- Conclusion Section -->
+        <section class="conclusion-section">
+            <h2 class="conclusion-title">Reflexión Final</h2>
+            <p>La salud mental es un aspecto fundamental para nuestro bienestar general. Cuidar de ella no solo implica atender nuestras emociones, sino también construir un entorno de apoyo y comprensión.</p>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Salud Mental y Bienestar. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>
