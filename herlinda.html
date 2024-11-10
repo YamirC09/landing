@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Herlinda - Carrusel de Imágenes</title>
+    <style>
+        /* Fondo y fuente */
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom right, #a8e6cf, #dcedc1);
+            color: #333;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        /* Header y Footer */
+        header, footer {
+            background-color: #4a90e2;
+            color: #fff;
+            text-align: center;
+            padding: 1.5em;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            font-size: 2.2em;
+            margin: 0;
+        }
+
+        /* Banner */
+        .banner {
+            width: 100%;
+            height: 300px;
+            background: url('img/herlinda-banner.jpg') no-repeat center center;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            text-align: center;
+            font-size: 2em;
+            font-weight: bold;
+        }
+
+        .container {
+            width: 90%;
+            margin: auto;
+            max-width: 1200px;
+            padding: 2em 0;
+        }
+
+        /* Carrusel de Imágenes */
+        .carousel-container {
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            max-width: 900px;
+            margin: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .carousel-track {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .carousel-item {
+            min-width: 25%; /* Muestra 4 imágenes en pantalla al mismo tiempo */
+            box-sizing: border-box;
+            padding: 10px;
+        }
+
+        .carousel-item img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .carousel-buttons {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
+
+        .carousel-button {
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 50%;
+            font-size: 18px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Salud Mental y Bienestar</h1>
+        <p>Cuidar de tu mente es tan importante como cuidar de tu cuerpo</p>
+    </header>
+
+    <!-- Banner -->
+    <div class="banner">
+        <p>Herlinda - Salud Mental</p>
+    </div>
+
+    <div class="container">
+        <!-- Carrusel de Imágenes -->
+        <section class="carousel-section">
+            <h2>Galería de Fotos de Herlinda</h2>
+            <div class="carousel-container">
+                <div class="carousel-track" id="carousel-track">
+                    <!-- Añadir las imágenes en orden repetido al principio y al final para efecto cíclico -->
+                    <div class="carousel-item"><img src="img/Imagen de WhatsApp 2024-11-08 a las 20.55.55_ce51126b.jpg" alt="Foto 4"></div>
+                    <div class="carousel-item"><img src="img/Imagen de WhatsApp 2024-11-08 a las 20.58.03_ab0d9f46.jpg" alt="Foto 1"></div>
+                    <div class="carousel-item"><img src="img/Imagen de WhatsApp 2024-11-08 a las 20.58.24_83430a0c.jpg" alt="Foto 2"></div>
+                    <div class="carousel-item"><img src="img/Imagen de WhatsApp 2024-11-08 a las 21.00.29_ab444983.jpg" alt="Foto 3"></div>
+                    <div class="carousel-item"><img src="img/Imagen de WhatsApp 2024-11-08 a las 20.57.41_348792be.jpg" alt="Foto 4"></div>
+                    <div class="carousel-item"><img src="img/herlinda-foto1.jpg" alt="Foto 1"></div>
+                </div>
+                <div class="carousel-buttons">
+                    <button class="carousel-button" onclick="prevSlide()">&#10094;</button>
+                    <button class="carousel-button" onclick="nextSlide()">&#10095;</button>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Salud Mental y Bienestar. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        const track = document.getElementById('carousel-track');
+        const totalItems = document.querySelectorAll('.carousel-item').length;
+        const visibleItems = 4; // Número de imágenes visibles
+        let currentIndex = visibleItems;
+
+        function showSlide(index) {
+            const offset = -index * (100 / totalItems); // Ajusta el offset con respecto al total de items
+            track.style.transition = 'transform 0.5s ease';
+            track.style.transform = `translateX(${offset}%)`;
+        }
+
+        function nextSlide() {
+            currentIndex++;
+            if (currentIndex >= totalItems - visibleItems) {
+                currentIndex = visibleItems;
+                track.style.transition = 'none'; // Elimina la animación temporalmente para un efecto continuo
+                showSlide(currentIndex);
+                setTimeout(() => {
+                    currentIndex = visibleItems;
+                    showSlide(currentIndex);
+                }, 0);
+            } else {
+                showSlide(currentIndex);
+            }
+        }
+
+        function prevSlide() {
+            currentIndex--;
+            if (currentIndex < visibleItems) {
+                currentIndex = totalItems - visibleItems - 1;
+                track.style.transition = 'none';
+                showSlide(currentIndex);
+                setTimeout(() => {
+                    showSlide(currentIndex);
+                }, 0);
+            } else {
+                showSlide(currentIndex);
+            }
+        }
+
+        // Auto-play cada 3 segundos
+        setInterval(nextSlide, 3000);
+    </script>
+
+</body>
+</html>
