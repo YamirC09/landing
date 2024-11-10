@@ -3,21 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Landing Page de Salud Mental</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <title>Salud Mental</title>
     <style>
+        /* Fondo y fuente */
         body {
             font-family: Arial, sans-serif;
-            background-color: #f0f8ff;
+            background: linear-gradient(to bottom right, #a8e6cf, #dcedc1);
             color: #333;
             margin: 0;
             padding: 0;
         }
 
+        /* Header y Footer */
         header, footer {
             background-color: #4a90e2;
             color: #fff;
             text-align: center;
-            padding: 1em;
+            padding: 1.5em;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            font-size: 2.2em;
+            margin: 0;
         }
 
         .container {
@@ -27,116 +36,190 @@
             padding: 2em 0;
         }
 
-        /* Integrantes Section */
+        /* Sección de Integrantes */
         .integrantes-section {
             text-align: center;
             margin-bottom: 2em;
+            background-color: #e8f5e9;
+            padding: 2em;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
 
         .integrantes-title {
-            font-size: 1.8em;
+            font-size: 2em;
             margin-bottom: 1em;
+            color: #2e7d32;
         }
 
         .cards-container {
             display: flex;
             justify-content: space-around;
             flex-wrap: wrap;
-            gap: 1em;
+            gap: 1.5em;
         }
 
         .card {
             background-color: #fff;
             width: 200px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
             text-align: center;
-            padding: 1em;
-            transition: transform 0.3s;
+            padding: 1.2em;
+            transition: transform 0.3s, box-shadow 0.3s;
         }
 
         .card:hover {
             transform: scale(1.05);
+            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
         }
 
         .card img {
             width: 100%;
-            border-radius: 8px;
+            border-radius: 0;
+            border: 4px solid #4a90e2;
+            margin-bottom: 0.8em;
         }
 
         .card a {
             display: block;
             margin-top: 0.5em;
             text-decoration: none;
-            color: #4a90e2;
+            color: #2e7d32;
             font-weight: bold;
+            font-size: 1.1em;
         }
 
-        /* Buttons */
+        /* Botones */
         .buttons {
             display: flex;
             justify-content: center;
-            gap: 1em;
+            gap: 1.5em;
             margin: 2em 0;
         }
 
         .button {
-            background-color: #4a90e2;
+            background-color: #66bb6a;
             color: #fff;
             padding: 0.8em 1.5em;
             border: none;
             border-radius: 5px;
             text-decoration: none;
             font-weight: bold;
-            transition: background-color 0.3s;
+            transition: background-color 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
         }
 
         .button:hover {
-            background-color: #357abd;
+            background-color: #4caf50;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
         }
 
-        /* Media Section */
+        /* Sección Multimedia */
         .media-section {
             text-align: center;
             margin-bottom: 2em;
         }
 
         .media-title {
-            font-size: 1.8em;
+            font-size: 2em;
             margin-bottom: 1em;
         }
 
-        .media-content {
+        .video-section {
             display: flex;
-            flex-wrap: wrap;
-            gap: 1em;
             justify-content: center;
-        }
-
-        .media-content img, .media-content video {
-            width: 100%;
-            max-width: 400px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        /* Conclusion Section */
-        .conclusion-section {
-            background-color: #eaf4fc;
-            padding: 2em;
-            text-align: center;
-            border-radius: 8px;
+            gap: 1em;
             margin-bottom: 2em;
         }
 
-        .conclusion-title {
-            font-size: 1.8em;
+        .video-section video {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .video-section video:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .image-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1em;
+        }
+
+        .image-text-container {
+            display: flex;
+            align-items: center;
+            gap: 1em;
             margin-bottom: 1em;
         }
 
-        footer {
-            font-size: 0.9em;
+        .image-section img {
+            width: 100%;
+            max-width: 350px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
         }
+
+        .image-section img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .text-box em {
+            font-size: 1.5rem;
+            display: inline-block;
+            text-align: left;
+        }
+
+        .reverse {
+        flex-direction: row-reverse;
+        }
+
+
+        /* Sección de Conclusión */
+        .conclusion-section {
+            background-color: #4a90e2;
+            padding: 2em;
+            text-align: center;
+            border-radius: 10px;
+            margin-bottom: 2em;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            font-family: 'Montserrat', sans-serif; /* Fuente llamativa */
+            font-weight: 700; /* Peso en negrita para destacar */
+            font-size: 1em; /* Ajusta el tamaño según lo que necesites */ /* Puedes ajustar el color para resaltar */
+        }
+
+        .conclusion-title {
+            font-size: 2em;
+            margin-bottom: 1em;
+            color: #fff;
+        }
+
+        footer {
+            font-size: 1em;
+            background-color: #4a90e2;
+            color: #b0bec5;
+            padding: 1.5em;
+        }
+
+        @media (max-width: 768px) {
+            .video-section {
+                flex-direction: column;
+            }
+
+            .video-section iframe {
+                max-width: 100%;
+            }
+}
+
     </style>
 </head>
 <body>
@@ -147,13 +230,13 @@
     </header>
 
     <div class="container">
-        <!-- Integrantes Section -->
+        <!-- Sección de Integrantes -->
         <section class="integrantes-section">
             <h2 class="integrantes-title">Nuestro Equipo</h2>
             <div class="cards-container">
                 <div class="card">
                     <img src="img/herlinda.jpg" alt="Integrante 1">
-                    <a href="pagina1.html">Herlinda</a>
+                    <a href="./herlinda.html" target="_blank" >Herlinda</a>
                 </div>
                 <div class="card">
                     <img src="img/valentina.jpg" alt="Integrante 2">
@@ -170,31 +253,46 @@
             </div>
 
             <div class="buttons">
-                <a href="encuesta.html" class="button">Participar en la Encuesta</a>
-                <a href="base_datos_encuesta.html" class="button">Ver Resultados</a>
+                <a href="https://forms.gle/SoucJNhGJ56PCpD26" target="_blank" class="button">Participar en la Encuesta</a>
+                <a href="https://docs.google.com/spreadsheets/d/1mzdk_66apPsNXCzZogLNq95RsXQh70lYlGeyZaqFE5w/edit?usp=sharing" target="_blank" class="button">Ver Resultados</a>
             </div>
         </section>
 
-        <!-- Media Section -->
-        <section class="media-section">
-            <h2 class="media-title">Galería de Salud Mental</h2>
-            <div class="media-content">
-                <img src="imagen1.jpg" alt="Imagen 1">
-                <video controls src="video1.mp4"></video>
-                <img src="imagen2.jpg" alt="Imagen 2">
-                <video controls src="video2.mp4"></video>
+        <!-- Sección de Videos -->
+        <section class="media-section video-section">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/eCjoNnS5k7Y?si=h8LWnMhowiBSEBsM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/E6YP6_mB5Fc?si=IUFjqOIbM65DW0iB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </section>
+
+        <!-- Sección de Imágenes -->
+        <section class="media-section image-section">
+            <div class="image-text-container">
+                <img src="img/Imagen de WhatsApp 2024-11-08 a las 20.55.09_0cafeda6.jpg" alt="Imagen 1">
+                <div class="text-box">
+                    <p><em>"No hay necesidad de apresurarse, a veces las cosas toman su tiempo, igual que una herida física tarda en sanar (Juan Armando Corbin)"</em></p>
+                </div>
+            </div>
+            <div class="image-text-container reverse">
+                <img src="img/Imagen de WhatsApp 2024-11-08 a las 20.55.55_ce51126b.jpg" alt="Imagen 2">
+                <div class="text-box">
+                    <p><em>"La salud mental es algo que todos tenemos; tú tienes buena salud mental si puedes enfrentarte a tus problemas y tensiones (Frank Bruno)"</em></p>
+                </div>
             </div>
         </section>
 
-        <!-- Conclusion Section -->
+        <!-- Sección de Conclusión -->
         <section class="conclusion-section">
-            <h2 class="conclusion-title">Reflexión Final</h2>
-            <p>La salud mental es un aspecto fundamental para nuestro bienestar general. Cuidar de ella no solo implica atender nuestras emociones, sino también construir un entorno de apoyo y comprensión.</p>
+            <h2 class="conclusion-title">Conclusion general de la Encuesta</h2>
+            <p>Este cuestionario ha puesto de manifiesto una situación muy precaria en relación con la salud mental de los estudiantes universitarios. Muchos enumeraron como razones del estrés académico los proyectos de evaluación, la sobrecarga de trabajo y también la falta de tiempo para descansar. Según esta encuesta, ha tenido un efecto muy debilitador en la salud mental y el rendimiento académico de la mayoría.
+                Las presiones relacionadas con las notas y la falta de tiempo son las causas más frecuentes, mientras que bastantes mencionaron también dificultades para compaginar actividades. Del mismo modo, los síntomas de depresión señalados por gran parte de los estudiantes confirman una fuerte carga emocional: falta de energía, problemas de sueño y dificultades para concentrarse.
+                Aunque la mayoría incluyó los grupos de apoyo y las redes sociales en la lista de factores importantes para el bienestar emocional, el impacto percibido del entorno universitario sobre la salud mental fue predominantemente negativo. Además, la pandemia COVID-19 ha repercutido negativamente en el estado mental de la mayoría de los encuestados.
+                Por último, los servicios de salud mental del campus están infrautilizados, y el «asesoramiento o terapia» es el recurso más reconocido. La falta de tiempo, el estigma social y el desconocimiento general de los servicios se identificaron como barreras notables para utilizar estos servicios. Esto evidencia la necesidad de mejorar el acceso y la visibilidad.
+                </p>
         </section>
     </div>
 
     <footer>
-        <p>&copy; 2024 Salud Mental y Bienestar. Todos los derechos reservados.</p>
+        <p>&copy; 2024 Equipo de Salud Mental</p>
     </footer>
 
 </body>
